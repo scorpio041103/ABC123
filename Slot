@@ -1,0 +1,93 @@
+# Online Gaming Platform Admin Dashboard
+
+## Overview
+
+This is a React-based admin dashboard for managing an online gaming platform. The application provides comprehensive tools for administrators to manage users, games, transactions, banking information, and generate reports. The platform supports user balance management, game administration, transaction monitoring, and activity logging for a complete gaming platform management experience.
+
+## User Preferences
+
+Preferred communication style: Simple, everyday language.
+
+## System Architecture
+
+### Frontend Architecture
+The client-side application is built using React with TypeScript and follows a modern component-based architecture:
+
+- **Framework**: React 18 with Vite as the build tool for fast development and optimized production builds
+- **Routing**: Wouter for lightweight client-side routing
+- **State Management**: React Query (@tanstack/react-query) for server state management and caching
+- **UI Components**: Radix UI primitives with shadcn/ui component library for consistent, accessible design
+- **Styling**: Tailwind CSS with CSS variables for theming and responsive design
+- **Form Handling**: React Hook Form with Zod validation for type-safe form management
+
+### Backend Architecture
+The server-side uses Express.js with TypeScript for a RESTful API:
+
+- **Framework**: Express.js with TypeScript for type safety
+- **Database ORM**: Drizzle ORM for type-safe database interactions
+- **API Design**: RESTful endpoints for admin operations including authentication, user management, game management, transactions, and banking
+- **Middleware**: Custom logging middleware for API request monitoring
+- **Development**: Hot reloading with Vite integration for seamless development
+
+### Data Storage Solutions
+The application uses PostgreSQL as the primary database with Drizzle ORM:
+
+- **Database**: PostgreSQL hosted on Neon (cloud-native serverless Postgres)
+- **Schema Management**: Drizzle Kit for database migrations and schema management
+- **Connection**: @neondatabase/serverless for optimized serverless database connections
+- **Tables**: Normalized schema with separate tables for admins, users, games, transactions, banking info, and activity logs
+
+### Authentication and Authorization
+Simple session-based authentication system:
+
+- **Admin Authentication**: Username/password login with local storage for session persistence
+- **Session Management**: Client-side session storage (suitable for admin-only access)
+- **API Protection**: Basic authentication checks on admin endpoints
+
+### Component Structure
+The frontend follows a well-organized component hierarchy:
+
+- **Pages**: Route-level components (admin-dashboard, not-found)
+- **Admin Components**: Specialized admin interface components (login-form, sidebar, various tab components)
+- **UI Components**: Reusable shadcn/ui components for consistent styling
+- **Hooks**: Custom React hooks for admin authentication and mobile detection
+- **Utilities**: Helper functions and query client configuration
+
+### Key Features
+- **User Management**: View, search, and manage user accounts with balance updates
+- **Game Management**: Add, edit, and manage gaming offerings with RTP and betting limits
+- **Transaction Monitoring**: Track deposits, withdrawals, and transaction status
+- **Banking Administration**: Manage banking information for payment processing
+- **Reporting**: Analytics and activity monitoring with export capabilities
+- **Responsive Design**: Mobile-friendly interface with collapsible sidebar navigation
+
+## External Dependencies
+
+### Core Framework Dependencies
+- **React Ecosystem**: React 18, React DOM, React Query for modern React development
+- **Build Tools**: Vite for fast development builds and optimized production output
+- **TypeScript**: Full TypeScript support for type safety across the application
+
+### Database and ORM
+- **Database**: PostgreSQL via Neon serverless platform (@neondatabase/serverless)
+- **ORM**: Drizzle ORM for type-safe database operations
+- **Migrations**: Drizzle Kit for database schema management
+- **Validation**: Zod for runtime type validation and schema validation
+
+### UI and Styling
+- **UI Library**: Radix UI primitives for accessible, unstyled components
+- **Component Library**: shadcn/ui for pre-built, customizable components
+- **Styling**: Tailwind CSS for utility-first styling
+- **Icons**: Lucide React for consistent iconography
+- **Utilities**: clsx and tailwind-merge for conditional styling
+
+### Development and Deployment
+- **Replit Integration**: Replit-specific plugins for development environment
+- **Session Storage**: connect-pg-simple for PostgreSQL session storage
+- **Routing**: Wouter for lightweight client-side routing
+- **Date Handling**: date-fns for date manipulation and formatting
+
+### Form and Data Management
+- **Forms**: React Hook Form with Hookform Resolvers for form validation
+- **Validation**: Zod schemas integrated with Drizzle for end-to-end type safety
+- **HTTP Client**: Native fetch API with React Query for data fetching and caching
